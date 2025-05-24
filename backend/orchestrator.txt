@@ -1,0 +1,12 @@
+const axios = require('axios');
+
+async function checkAIService() {
+  try {
+    const response = await axios.get('http://localhost:8000/health');
+    console.log('AI Service Response:', response.data);
+  } catch (error) {
+    console.error('AI Service Unreachable:', error.message);
+  }
+}
+
+checkAIService();
